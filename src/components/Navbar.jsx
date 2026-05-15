@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 import { Link } from 'react-scroll';
 
+import profileImg from '../assets/profile.jpg';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -29,9 +31,17 @@ const Navbar = () => {
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-bold text-gradient cursor-pointer"
         >
-          MF.
+          <Link to="hero" smooth={true} duration={500} className="cursor-pointer">
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+              <img 
+                src={profileImg} 
+                alt="Mohammed Faraz" 
+                className="relative w-10 h-10 rounded-full object-cover border-2 border-white/20"
+              />
+            </div>
+          </Link>
         </motion.div>
 
         {/* Desktop Menu */}
