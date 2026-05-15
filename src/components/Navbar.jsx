@@ -8,6 +8,7 @@ import profileImg from '../assets/profile.jpg';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isImageEnlarged, setIsImageEnlarged] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,16 +33,17 @@ const Navbar = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <Link to="hero" smooth={true} duration={500} className="cursor-pointer">
-            <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
-              <img 
-                src={profileImg} 
-                alt="Mohammed Faraz" 
-                className="relative w-10 h-10 rounded-full object-cover border-2 border-white/20"
-              />
-            </div>
-          </Link>
+          <div 
+            className="relative group cursor-pointer" 
+            onClick={() => setIsImageEnlarged(true)}
+          >
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+            <img 
+              src={profileImg} 
+              alt="Mohammed Faraz" 
+              className="relative w-10 h-10 rounded-full object-cover border-2 border-white/20"
+            />
+          </div>
         </motion.div>
 
         {/* Desktop Menu */}
@@ -103,6 +105,39 @@ const Navbar = () => {
                 <a href="mailto:mohdfaraz9886@gmail.com"><Mail size={24} className="text-gray-400" /></a>
               </div>
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {/* Image Modal */}
+      <AnimatePresence>
+        {isImageEnlarged && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
+            onClick={() => setIsImageEnlarged(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-3xl w-full flex justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button 
+                className="absolute -top-12 right-0 md:-right-12 text-white hover:text-gray-300 transition-colors bg-white/10 rounded-full p-2"
+                onClick={() => setIsImageEnlarged(false)}
+              >
+                <X size={24} />
+              </button>
+              <img 
+                src={profileImg} 
+                alt="Mohammed Faraz" 
+                className="max-h-[80vh] w-auto rounded-2xl shadow-2xl border-2 border-white/20 object-contain"
+              />
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
