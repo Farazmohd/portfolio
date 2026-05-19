@@ -124,7 +124,7 @@ const Contact = () => {
                     id="contact-name"
                     name="name"
                     required
-                    placeholder="John Doe"
+                    placeholder="Enter your name"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-accent-blue focus:ring-1 focus:ring-accent-blue outline-none transition-all"
                   />
                 </div>
@@ -135,7 +135,7 @@ const Contact = () => {
                     id="contact-email"
                     name="email"
                     required
-                    placeholder="john@example.com"
+                    placeholder="yourname@example.com"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-accent-blue focus:ring-1 focus:ring-accent-blue outline-none transition-all"
                   />
                 </div>
