@@ -5,7 +5,6 @@ import { Link } from 'react-scroll';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import ResumeTemplate from './ResumeTemplate';
-import HeroBackground from './HeroBackground';
 
 const Hero = () => {
   const resumeRef = useRef();
@@ -48,12 +47,25 @@ const Hero = () => {
     <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Hidden Resume Template for PDF generation */}
       <ResumeTemplate innerRef={resumeRef} />
-      
-      {/* Next-Gen Cinematic Background (z-index 0) */}
-      <HeroBackground />
+      {/* Animated Background Particles (CSS only for performance) */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute rounded-full bg-white/5 animate-pulse-slow"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              width: `${Math.random() * 10 + 2}px`,
+              height: `${Math.random() * 10 + 2}px`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${Math.random() * 10 + 5}s`
+            }}
+          />
+        ))}
+      </div>
 
-      {/* Hero Content (z-index 10) */}
-      <div className="container mx-auto px-6 relative z-[10] text-center">
+      <div className="container mx-auto px-6 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

@@ -92,7 +92,7 @@ const ResumeTemplate = ({ innerRef }) => {
       <div ref={innerRef} style={styles.page}>
         {/* Header */}
         <div style={styles.header}>
-          <h1 style={styles.name}>MOHAMMED FARAZ</h1>
+          <div style={styles.name}>MOHAMMED FARAZ</div>
           <p style={styles.contact}>
             Mysore, Karnataka, India | 9886550624 | mohdfaraz9886@gmail.com | linkedin.com/in/mohammed-faraz-716380269
           </p>
@@ -100,7 +100,7 @@ const ResumeTemplate = ({ innerRef }) => {
 
         {/* Professional Summary */}
         <section>
-          <h2 style={styles.sectionHeader}>PROFESSIONAL SUMMARY</h2>
+          <div style={styles.sectionHeader}>PROFESSIONAL SUMMARY</div>
           <p style={styles.text}>
             Software Engineer with experience in React Native, Node.js, MS SQL Server, and AI/Deep Learning. Skilled in 
             building scalable web and mobile applications, REST APIs, CRM systems, and security auditing platforms.
@@ -109,7 +109,7 @@ const ResumeTemplate = ({ innerRef }) => {
 
         {/* Technical Skills */}
         <section>
-          <h2 style={styles.sectionHeader}>TECHNICAL SKILLS</h2>
+          <div style={styles.sectionHeader}>TECHNICAL SKILLS</div>
           <div style={styles.text}>
             <div><strong>Languages:</strong> Java, Python, JavaScript, SQL</div>
             <div><strong>Frontend:</strong> React.js, React Native, HTML, CSS, Streamlit</div>
@@ -123,7 +123,7 @@ const ResumeTemplate = ({ innerRef }) => {
 
         {/* Professional Experience */}
         <section>
-          <h2 style={styles.sectionHeader}>PROFESSIONAL EXPERIENCE</h2>
+          <div style={styles.sectionHeader}>PROFESSIONAL EXPERIENCE</div>
           
           <div style={styles.subHeader}>
             <span>Junior Software Engineer | Navabharath Technologies</span>
@@ -148,7 +148,7 @@ const ResumeTemplate = ({ innerRef }) => {
 
         {/* Key Projects */}
         <section>
-          <h2 style={styles.sectionHeader}>KEY PROJECTS</h2>
+          <div style={styles.sectionHeader}>KEY PROJECTS</div>
           
           <div style={styles.projectTitle}>QuantumGuard – Post-Quantum Cryptography Security Auditing Platform</div>
           <div style={styles.listContainer}>
@@ -181,7 +181,7 @@ const ResumeTemplate = ({ innerRef }) => {
 
         {/* Education */}
         <section>
-          <h2 style={styles.sectionHeader}>EDUCATION</h2>
+          <div style={styles.sectionHeader}>EDUCATION</div>
           <div style={styles.subHeader}>
             <span>B.E. in Computer Science | Visvesvaraya Technological University</span>
             <span>2019 – 2023</span>
@@ -190,7 +190,7 @@ const ResumeTemplate = ({ innerRef }) => {
 
         {/* Certifications */}
         <section style={{ pageBreakBefore: 'always', marginTop: '100px' }}>
-          <h2 style={styles.sectionHeader}>CERTIFICATIONS</h2>
+          <div style={styles.sectionHeader}>CERTIFICATIONS</div>
           <div style={styles.listContainer}>
             <ListItem>Java Full Stack – Q-Spiders Mysore</ListItem>
             <ListItem>Data Analytics – NUCOT Bangalore</ListItem>
@@ -199,7 +199,7 @@ const ResumeTemplate = ({ innerRef }) => {
 
         {/* Languages */}
         <section>
-          <h2 style={styles.sectionHeader}>LANGUAGES</h2>
+          <div style={styles.sectionHeader}>LANGUAGES</div>
           <p style={{ ...styles.text, marginTop: '5px' }}>Kannada, Hindi, Urdu, English</p>
         </section>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, Heart } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -16,15 +16,17 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-end gap-4">
             <div className="flex gap-6">
               {[
-                { Icon: Github, href: "https://github.com/Farazmohd" },
-                { Icon: Linkedin, href: "https://www.linkedin.com/in/mohammed-faraz-716380269/" },
-                { Icon: Mail, href: "mailto:mohdfaraz9886@gmail.com" }
-              ].map(({ Icon, href }, i) => (
+                { Icon: Github, href: "https://github.com", label: "GitHub" },
+                { Icon: Linkedin, href: "https://linkedin.com/in/mohammed-faraz-716380269", label: "LinkedIn" },
+                { Icon: Twitter, href: "#", label: "Twitter" },
+                { Icon: Mail, href: "mailto:mohdfaraz9886@gmail.com", label: "Email" }
+              ].map(({ Icon, href, label }, i) => (
                 <a 
                   key={i} 
                   href={href} 
-                  target={href.startsWith('http') ? "_blank" : undefined}
-                  rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
+                  aria-label={label}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="text-gray-500 hover:text-white transition-colors"
                 >
                   <Icon size={20} />

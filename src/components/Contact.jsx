@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
 
 const Contact = () => {
   const [result, setResult] = useState("");
@@ -86,14 +86,16 @@ const Contact = () => {
                 <p className="text-sm text-gray-500 mb-4 uppercase tracking-widest font-bold">Follow Me</p>
                 <div className="flex gap-4">
                   {[
-                    { Icon: Github, href: "https://github.com/Farazmohd" },
-                    { Icon: Linkedin, href: "https://www.linkedin.com/in/mohammed-faraz-716380269/" }
-                  ].map(({ Icon, href }, i) => (
+                    { Icon: Github, href: "https://github.com", label: "GitHub" },
+                    { Icon: Linkedin, href: "https://linkedin.com/in/mohammed-faraz-716380269", label: "LinkedIn" },
+                    { Icon: Twitter, href: "#", label: "Twitter" }
+                  ].map(({ Icon, href, label }, i) => (
                     <motion.a
                       key={i}
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={label}
                       whileHover={{ y: -5 }}
                       className="p-3 rounded-xl bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 transition-all border border-white/5"
                     >
@@ -116,9 +118,10 @@ const Contact = () => {
             <form onSubmit={onSubmit} className="glass-card p-10 space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-400 ml-1">Full Name</label>
+                  <label htmlFor="contact-name" className="text-sm font-medium text-gray-400 ml-1">Full Name</label>
                   <input 
                     type="text" 
+                    id="contact-name"
                     name="name"
                     required
                     placeholder="John Doe"
@@ -126,9 +129,10 @@ const Contact = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-400 ml-1">Email Address</label>
+                  <label htmlFor="contact-email" className="text-sm font-medium text-gray-400 ml-1">Email Address</label>
                   <input 
                     type="email" 
+                    id="contact-email"
                     name="email"
                     required
                     placeholder="john@example.com"
@@ -137,9 +141,10 @@ const Contact = () => {
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400 ml-1">Subject</label>
+                <label htmlFor="contact-subject" className="text-sm font-medium text-gray-400 ml-1">Subject</label>
                 <input 
                   type="text" 
+                  id="contact-subject"
                   name="subject"
                   required
                   placeholder="Inquiry about project"
@@ -147,8 +152,9 @@ const Contact = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400 ml-1">Message</label>
+                <label htmlFor="contact-message" className="text-sm font-medium text-gray-400 ml-1">Message</label>
                 <textarea 
+                  id="contact-message"
                   name="message"
                   required
                   rows="5" 
