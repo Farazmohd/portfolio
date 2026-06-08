@@ -142,3 +142,7 @@
 .glow-card:hover {
   box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
 }
+
+@utility bg-radial-vignette {
+  background: radial-gradient(circle at center, transparent 20%, rgba(2, 6, 23, 0.4) 60%, rgba(2, 6, 23, 0.8) 100%);
+}
