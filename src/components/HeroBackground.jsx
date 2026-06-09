@@ -110,17 +110,14 @@ export default function HeroBackground() {
       ref={containerRef}
       className="absolute inset-0 z-0 bg-[#020617] overflow-hidden"
     >
-      {/* Background Media Container with Parallax Translation */}
+      {/* Background Media Container */}
       <div 
-        className="absolute inset-[-20px] z-0 transition-transform duration-100 ease-out"
-        style={{
-          transform: `translate(${mouse.x * -30}px, ${mouse.y * -30}px) scale(1.05)`,
-        }}
+        className="absolute inset-0 z-0"
       >
         {/* Loop Background Video */}
         <video
           ref={videoRef}
-          className="w-full h-full object-cover opacity-50"
+          className="w-full h-full object-fill opacity-50"
           src="/hero-bg.mp4"
           poster="/hero-bg-poster.png"
           autoPlay
